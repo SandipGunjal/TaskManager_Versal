@@ -42,7 +42,7 @@ const TaskForm = () => {
       }
 
       axios
-        .get(`http://localhost:5000/api/tasks/${id}`, {
+        .get(`https://taskmanager-versal-api.onrender.com/api/tasks/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
@@ -80,7 +80,7 @@ const TaskForm = () => {
     if (id) {
       // Update existing task
       axios
-        .put(`http://localhost:5000/api/tasks/${id}`, task, config)
+        .put(`https://taskmanager-versal-api.onrender.com/api/tasks/${id}`, task, config)
         .then((response) => {
           toast.success(response.data.message)
           navigate("/tasks"); // redirect to task list after update
@@ -94,7 +94,7 @@ const TaskForm = () => {
     } else {
       // Create new task
       axios
-        .post("http://localhost:5000/api/tasks", task, config)
+        .post("https://taskmanager-versal-api.onrender.com/api/tasks", task, config)
         .then((response) => {
           console.log(response);
           toast.success(response.data.message)

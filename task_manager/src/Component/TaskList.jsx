@@ -11,7 +11,7 @@ const TaskList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/tasks", {
+      .get("https://taskmanager-versal-api.onrender.com/api/tasks", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((response) => {
@@ -33,7 +33,7 @@ const TaskList = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:5000/api/tasks/${id}`, {
+      .delete(`https://taskmanager-versal-api.onrender.com/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       })
       .then((response) => {
